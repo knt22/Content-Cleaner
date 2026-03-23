@@ -1,0 +1,32 @@
+# PDF rendering and rebuilding
+PyMuPDF>=1.23.0
+
+# Image manipulation
+Pillow>=10.0.0
+
+# Numerical arrays (used by WD14 preprocessing)
+numpy>=1.24.0
+
+# ── Detector 1: NudeNet ───────────────────────────────────────────────────────
+# Lightweight ONNX model (~5 MB), downloads on first run.
+# Best for photorealistic content; used as a secondary layer for manga.
+nudenet>=3.4.2
+
+# ── Detector 2: WD14 Tagger (primary for anime/manga) ───────────────────────
+# Trained on 100M+ Danbooru images — understands anime art natively.
+# Downloads ~200 MB ONNX model on first run (SwinV2 tagger v2).
+# Uses specific explicit tags (nipples/nude/genitalia) — NOT a coarse NSFW score.
+# onnxruntime is a transitive dep of nudenet but listed explicitly here.
+onnxruntime>=1.16.0
+huggingface_hub>=0.20.0
+
+# ── Text restoration (on by default, disable with --no-restore-text) ─────────
+# EasyOCR uses CRAFT neural text detector — much more accurate than Tesseract
+# for manga (won't misread artwork as text, returns proper line-level boxes).
+# No system dependencies required.
+easyocr>=1.7.0
+
+# ── Optional: anime-specific YOLO detector ───────────────────────────────────
+# Pass --yolo-weights /path/to/weights.pt to enable.
+# Uncomment to install:
+# ultralytics>=8.0.0
