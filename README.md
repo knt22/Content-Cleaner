@@ -1,6 +1,6 @@
-# Content Cleaner — Manga NSFW Censor
+# Content Cleaner — Manga / Novel / WebNovel NSFW Censor
 
-Automatically detects and censors explicit content in manga/anime PDF files using AI models trained on drawn art. Rebuilds a clean PDF at original image quality.
+Automatically detects and censors explicit content in manga/anime (and more) PDF files using AI models trained on drawn art. Rebuilds a clean PDF at original image quality.
 
 ---
 
